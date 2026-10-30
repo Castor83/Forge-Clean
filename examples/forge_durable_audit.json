@@ -1,0 +1,7 @@
+{
+  "task_id": "forge-durable-audit",
+  "objective": "Read SPEC.md and reproduce the entire frozen durable audit storage module in agent/audit.py using small tool actions of at most 2500 source characters and the FORGE_NEXT_BLOCK assembly method. Use the verified read-only agent/audit_acl.py dependency. Do not modify either read-only input.",
+  "allowed_files": ["agent/audit.py"],
+  "read_only_files": ["SPEC.md", "agent/audit_acl.py"],
+  "checks": [{"kind": "host_suite", "suite": "durable_audit_v1"}]
+}

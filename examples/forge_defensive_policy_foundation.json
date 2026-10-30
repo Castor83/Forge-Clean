@@ -1,0 +1,18 @@
+{
+  "task_id": "forge-defensive-policy-foundation",
+  "objective": "Read SPEC.md and implement the complete three-module defensive policy foundation. Do not modify the specification.",
+  "allowed_files": [
+    "agent/capabilities.py",
+    "agent/decisions.py",
+    "agent/policy.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "defensive_policy_foundation_v1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "task_id": "forge-rejection-probe",
+  "objective": "Create agent/probe.py with a probe_status() function that returns exactly 'SAFE'.",
+  "allowed_files": [
+    "agent/probe.py"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/probe.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/probe.py"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/probe.py",
+      "function": "probe_status",
+      "cases": [
+        {
+          "args": [],
+          "expected": "HOST_EXPECTED_DIFFERENT_VALUE"
+        }
+      ]
+    }
+  ]
+}

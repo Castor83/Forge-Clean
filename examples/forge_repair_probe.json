@@ -1,0 +1,17 @@
+{
+  "task_id": "forge-repair-probe",
+  "objective": "Read SPEC.md and carry out the bounded repair probe in result.txt. Do not modify the specification.",
+  "allowed_files": [
+    "result.txt"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "contains_text",
+      "path": "result.txt",
+      "text": "FINAL"
+    }
+  ]
+}

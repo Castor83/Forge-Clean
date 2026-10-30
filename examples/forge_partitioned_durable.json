@@ -1,0 +1,24 @@
+{
+  "task_id": "forge-partitioned-durable",
+  "objective": "Read SPEC.md and write every exact source fragment to its separate named text file. Use one write_file action per fragment. Do not assemble a Python file yourself, do not combine fragments, and do not modify read-only inputs. The host validates and assembles all fragments only after the complete build.",
+  "allowed_files": [
+    "parts/audit_1.txt",
+    "parts/audit_2.txt",
+    "parts/audit_3.txt",
+    "parts/audit_4.txt",
+    "parts/audit_5.txt",
+    "parts/audit_6.txt",
+    "parts/audit_7.txt",
+    "parts/audit_8.txt"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/audit_acl.py"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "partitioned_durable_audit_v1"
+    }
+  ]
+}

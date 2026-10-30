@@ -1,0 +1,35 @@
+{
+  "task_id": "forge-execution-contract",
+  "objective": "Read SPEC.md for the complete source and constraints. Reproduce that entire source in agent/execution_contract.py. Preserve every read-only input. Read these frozen payload files separately in this exact order: reference_payloads/part-01.txt, reference_payloads/part-02.txt, reference_payloads/part-03.txt, reference_payloads/part-04.txt, reference_payloads/part-05.txt, reference_payloads/part-06.txt. Immediately after each read, copy its COMPLETE content unchanged into your file-tool response. Payload 1: write_file content equals the just-read payload exactly. Each later payload: replace_text old is exactly # FORGE_FRAGMENT_APPEND_20261003 followed by LF; new equals the just-read payload exactly. Do not construct, add, omit or remove marker characters: non-last payloads already include the correct marker and LF, the last payload already excludes it. Preserve all source characters, indentation and LF endings. Do not locate fragments in SPEC, summarize or execute payloads. Pure reference_parts files remain read-only provenance and need no additional construction reads. The host never fills or assembles the output. After the last payload read back the entire output, then finish. Initial builder may not run_check. Tester and reviewer must run_check; on passed:false finish immediately with passed:false and exact finding, never repair or repeat a negative check. Only host starts a bounded repair. Existing complete AST acceptance, output rights and resource limits remain unchanged. repair_actions still counts construction replace_text actions; report their purpose separately from host repair loops. Reference provenance only: exact unique literal boundary excerpts below identify the frozen segments; do not search SPEC to locate them. Each excerpt is included in its fragment once; excerpt labels are instructions, not source text.\nFragment 1, inclusive source lines 1-116. BEGIN excerpt:\n\"\"\"Host-side validation for bounded Obsidian active-operation contracts.\"\"\"\nEND excerpt:\n) -> ValidatedExecutionContract:\nEND boundary instructions.\nFragment 2, inclusive source lines 117-189. BEGIN excerpt:\n    \"\"\"Validate untrusted contract data and return an immutable host artifact.\"\"\"\nEND excerpt:\n            and entry[0]() is contract\nEND boundary instructions.\nFragment 3, inclusive source lines 190-276. BEGIN excerpt:\n            and getattr(contract, \"_seal\", None) is _VALIDATION_SEAL\nEND excerpt:\n        raise ContractValidationError(\"target.address must be an IP literal\") from exc\nEND boundary instructions.\nFragment 4, inclusive source lines 277-343. BEGIN excerpt:\n    if not parsed_address.is_loopback:\nEND excerpt:\n            \"max_concurrency\": MAX_CONCURRENCY,\nEND boundary instructions.\nFragment 5, inclusive source lines 344-419. BEGIN excerpt:\n            \"max_runtime_seconds\": MAX_RUNTIME_SECONDS,\nEND excerpt:\n        )\n    except ValueError as exc:\nEND boundary instructions.\nFragment 6, inclusive source lines 420-425. BEGIN excerpt:\n        raise ContractValidationError(f\"{label} must use YYYY-MM-DDTHH:MM:SSZ\") from exc\nEND excerpt:\n    return value.strftime(\"%Y-%m-%dT%H:%M:%SZ\")\nEND boundary instructions.\n",
+  "allowed_files": [
+    "agent/execution_contract.py"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/capability_registry.py",
+    "agent/core.py",
+    "agent/decision_service.py",
+    "agent/audit.py",
+    "agent/audit_acl.py",
+    "agent/config_analysis_service.py",
+    "agent/config_analyzer.py",
+    "reference_parts/part-01.txt",
+    "reference_parts/part-02.txt",
+    "reference_parts/part-03.txt",
+    "reference_parts/part-04.txt",
+    "reference_parts/part-05.txt",
+    "reference_parts/part-06.txt",
+    "reference_payloads/part-01.txt",
+    "reference_payloads/part-02.txt",
+    "reference_payloads/part-03.txt",
+    "reference_payloads/part-04.txt",
+    "reference_payloads/part-05.txt",
+    "reference_payloads/part-06.txt"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "execution_contract_v1"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "forge-minimized-audit-chain",
+  "objective": "Read SPEC.md and implement the complete minimized in-memory audit-chain codec and verifier in the one allowed module. Do not modify the specification.",
+  "allowed_files": [
+    "agent/audit_chain.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "minimized_audit_chain_v1"
+    }
+  ]
+}

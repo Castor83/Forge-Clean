@@ -1,0 +1,17 @@
+{
+  "task_id": "forge-two-module-policy",
+  "objective": "Read SPEC.md and implement the complete two-module policy agent in agent/registry.py and agent/policy.py. Do not modify the specification.",
+  "allowed_files": [
+    "agent/registry.py",
+    "agent/policy.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "two_module_policy_v1"
+    }
+  ]
+}

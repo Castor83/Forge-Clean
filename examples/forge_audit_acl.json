@@ -1,0 +1,7 @@
+{
+  "task_id": "forge-audit-acl",
+  "objective": "Read SPEC.md and reproduce its entire frozen Windows audit ACL module in agent/audit_acl.py using small tool actions of at most 2500 source characters. Follow the FORGE_NEXT_BLOCK assembly method from SPEC.md. Do not modify the read-only specification or omit any checks.",
+  "allowed_files": ["agent/audit_acl.py"],
+  "read_only_files": ["SPEC.md"],
+  "checks": [{"kind": "host_suite", "suite": "audit_acl_v1"}]
+}

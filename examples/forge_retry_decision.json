@@ -1,0 +1,213 @@
+{
+  "task_id": "forge-retry-first-build",
+  "objective": "Erzeuge ausschlie\u00dflich agent/retry_decision.py mit genau einer \u00f6ffentlichen\nFunktion should_retry(error_kind, already_retried), ohne Typannotationen,\nStandardargumente oder zus\u00e4tzliche Parameter. Beide Eingaben sind endliche\nJSON-Skalarwerte (Text, Integer, endliche Kommazahl, bool oder null) innerhalb\nder unver\u00e4nderten Hostbudgets einschlie\u00dflich kumulativer Ausdruckskosten.\n\nerror_kind bezeichnet die Fehlerart. Nur ein Text, der nach Entfernen \u00e4u\u00dferer\nLeerzeichen exakt \"temporary\" lautet, gilt als vor\u00fcbergehend.\nGro\u00df-/Kleinschreibung und innere Zeichen bleiben relevant. already_retried\nbezeichnet, ob der zus\u00e4tzliche Versuch schon verbraucht wurde: Der echte\nbool-Wert false bedeutet nein, der echte bool-Wert true bedeutet ja.\n\nGib immer einen echten bool zur\u00fcck. Genau dann true, wenn error_kind ein Text\nmit dem nach \u00e4u\u00dferer Leerzeichenbereinigung exakten Wert \"temporary\" und\nalready_retried der echte bool-Wert false ist. Alle anderen zul\u00e4ssigen\nSkalarwerte ergeben false, ohne Ausnahme. Insbesondere sind 0, 0.0, -0.0,\n\"False\" und null kein g\u00fcltiges false-Signal. Eine Hostbudget-Ablehnung ist ein\nnegativer Hostbefund, kein false-Ergebnis der Funktion.\n\nKeine Referenzimplementierung, Quellfragmente oder L\u00f6sungsausdr\u00fccke als Input.\nNur Anforderungen und festgelegte F\u00e4lle. Keine Imports, Klassen, weiteren\nFunktionen, Schleifen, Zuweisungen, Dekoratoren oder Seiteneffekte. Genau eine\nFunktion mit genau einer return-Anweisung; optional Modul-/Funktionsdocstring.\nNur die bereits erlaubte Ausdruckssyntax des unver\u00e4nderten Hostpr\u00fcfers.\n\nFeste Anforderungsf\u00e4lle (args -> expected):\n[{\"args\": [\"temporary\", false], \"expected\": true}, {\"args\": [\" temporary \", false], \"expected\": true}, {\"args\": [\"\\ttemporary\\n\", false], \"expected\": true}, {\"args\": [\"permanent\", false], \"expected\": false}, {\"args\": [\"unknown\", false], \"expected\": false}, {\"args\": [\"Temporary\", false], \"expected\": false}, {\"args\": [\"temp orary\", false], \"expected\": false}, {\"args\": [\"\", false], \"expected\": false}, {\"args\": [\" \\t\\n\", false], \"expected\": false}, {\"args\": [null, false], \"expected\": false}, {\"args\": [true, false], \"expected\": false}, {\"args\": [false, false], \"expected\": false}, {\"args\": [7, false], \"expected\": false}, {\"args\": [1.5, false], \"expected\": false}, {\"args\": [\"temporary\", true], \"expected\": false}, {\"args\": [\"temporary\", 0], \"expected\": false}, {\"args\": [\"temporary\", 1], \"expected\": false}, {\"args\": [\"temporary\", -1], \"expected\": false}, {\"args\": [\"temporary\", 0.0], \"expected\": false}, {\"args\": [\"temporary\", -0.0], \"expected\": false}, {\"args\": [\"temporary\", 1.5], \"expected\": false}, {\"args\": [\"temporary\", null], \"expected\": false}, {\"args\": [\"temporary\", \"False\"], \"expected\": false}, {\"args\": [\"temporary\", \"false\"], \"expected\": false}, {\"args\": [\"temporary\", \"\"], \"expected\": false}, {\"args\": [\"temporary\", \"unused\"], \"expected\": false}, {\"args\": [null, null], \"expected\": false}]",
+  "allowed_files": [
+    "agent/retry_decision.py"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/retry_decision.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/retry_decision.py"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/retry_decision.py",
+      "function": "should_retry",
+      "cases": [
+        {
+          "args": [
+            "temporary",
+            false
+          ],
+          "expected": true
+        },
+        {
+          "args": [
+            " temporary ",
+            false
+          ],
+          "expected": true
+        },
+        {
+          "args": [
+            "\ttemporary\n",
+            false
+          ],
+          "expected": true
+        },
+        {
+          "args": [
+            "permanent",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "unknown",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "Temporary",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temp orary",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            " \t\n",
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            null,
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            true,
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            false,
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            7,
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            1.5,
+            false
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            true
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            0
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            1
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            -1
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            0.0
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            -0.0
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            1.5
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            null
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            "False"
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            "false"
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            ""
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            "temporary",
+            "unused"
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            null,
+            null
+          ],
+          "expected": false
+        }
+      ]
+    }
+  ]
+}

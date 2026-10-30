@@ -1,0 +1,7 @@
+{
+  "task_id": "forge-f001-preparation",
+  "objective": "Read SPEC.md and reproduce its complete frozen file analyzer, automated JSON fixture cases and documentation. This is a bounded offline preparation, not unrestricted F-001 or M2 acceptance.",
+  "allowed_files": ["agent/file_analyzer.py", "agent/file_analyzer_cases.json", "agent/README.md"],
+  "read_only_files": ["SPEC.md"],
+  "checks": [{"kind": "host_suite", "suite": "f001_file_analyzer_v1"}]
+}

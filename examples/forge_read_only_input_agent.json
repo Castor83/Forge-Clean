@@ -1,0 +1,35 @@
+{
+  "task_id": "forge-read-only-input-agent",
+  "objective": "Read SPEC.md and implement its complete requirement in agent/from_spec.py. Do not modify the specification.",
+  "allowed_files": [
+    "agent/from_spec.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/from_spec.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/from_spec.py"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/from_spec.py",
+      "function": "wrap_value",
+      "cases": [
+        {
+          "args": ["Ada"],
+          "expected": "[Ada]"
+        },
+        {
+          "args": [17],
+          "expected": "[17]"
+        }
+      ]
+    }
+  ]
+}

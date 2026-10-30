@@ -1,0 +1,18 @@
+{
+  "task_id": "forge-advanced-defensive-policy",
+  "objective": "Read SPEC.md and implement the complete coded multi-capability defensive policy in the three allowed modules. Do not modify the specification.",
+  "allowed_files": [
+    "agent/capabilities.py",
+    "agent/decisions.py",
+    "agent/policy.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "advanced_defensive_policy_v1"
+    }
+  ]
+}

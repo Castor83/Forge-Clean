@@ -1,0 +1,7 @@
+{
+  "task_id": "forge-audit-recovery",
+  "objective": "Read SPEC.md and reproduce its exact inspection and durable resolution functions in agent/audit_recovery.py. The specification is read-only. Do not implement or replace the host audit storage dependencies.",
+  "allowed_files": ["agent/audit_recovery.py"],
+  "read_only_files": ["SPEC.md"],
+  "checks": [{"kind": "host_suite", "suite": "audit_recovery_v1"}]
+}
