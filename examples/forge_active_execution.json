@@ -1,0 +1,34 @@
+{
+  "task_id": "forge-active-execution",
+  "objective": "Read SPEC.md for the complete source and constraints. Reproduce that entire source in agent/active_scan.py. Preserve every read-only input. Read these frozen payload files separately in this exact order: reference_payloads/part-01.txt, reference_payloads/part-02.txt, reference_payloads/part-03.txt, reference_payloads/part-04.txt, reference_payloads/part-05.txt. Immediately after each read, copy its COMPLETE content unchanged into your file-tool response. Payload 1: write_file content equals the just-read payload exactly. Each later payload: replace_text old is exactly # FORGE_FRAGMENT_APPEND_20261003 followed by LF; new equals the just-read payload exactly. Do not construct, add, omit or remove marker characters: non-last payloads already include the correct marker and LF, the last payload already excludes it. Preserve all source characters, indentation and LF endings. Do not locate fragments in SPEC, summarize or execute payloads. Pure reference_parts files remain read-only provenance and need no additional construction reads. The host never fills or assembles the output. After the last payload read back the entire output, then finish. Initial builder may not run_check. Tester and reviewer must run_check; on passed:false finish immediately with passed:false and exact finding, never repair or repeat a negative check. Only host starts a bounded repair. Existing complete AST acceptance, output rights and resource limits remain unchanged. repair_actions still counts construction replace_text actions; report their purpose separately from host repair loops. Reference provenance only: exact unique literal boundary excerpts below identify the frozen segments; do not search SPEC to locate them. Each excerpt is included in its fragment once; excerpt labels are instructions, not source text.\nFragment 1, inclusive source lines 1-89. BEGIN excerpt:\n\"\"\"Fixed host implementation for the one bounded active lab capability.\"\"\"\nEND excerpt:\n_PROBE_ISSUANCE_LOCK = RLock()\n\n\nEND boundary instructions.\nFragment 2, inclusive source lines 90-178. BEGIN excerpt:\ndef _probe_content(authorization: _AuthorizedProbe) -> tuple[str, int, str] | None:\nEND excerpt:\n    def authorize_probe(\n        self,\n        *,\nEND boundary instructions.\nFragment 3, inclusive source lines 179-254. BEGIN excerpt:\n        address: str,\n        port: int,\n        transport: str,\n    ) -> ExecutionStatusCode | None:\nEND excerpt:\n    abort_event: Event | None = None,\n) -> ActiveScanResult:\nEND boundary instructions.\nFragment 4, inclusive source lines 255-337. BEGIN excerpt:\n    \"\"\"Perform TCP connect probes through fixed code, without sending payload data.\"\"\"\nEND excerpt:\n        raise ValueError(\"probe authorization is outside the fixed host boundary\")\nEND boundary instructions.\nFragment 5, inclusive source lines 338-367. BEGIN excerpt:\n    family = socket.AF_INET if parsed.version == 4 else socket.AF_INET6\nEND excerpt:\n    return monotonic()\nEND boundary instructions.\n",
+  "allowed_files": [
+    "agent/active_scan.py"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/capability_registry.py",
+    "agent/core.py",
+    "agent/decision_service.py",
+    "agent/audit.py",
+    "agent/audit_acl.py",
+    "agent/config_analysis_service.py",
+    "agent/config_analyzer.py",
+    "agent/execution_contract.py",
+    "reference_parts/part-01.txt",
+    "reference_parts/part-02.txt",
+    "reference_parts/part-03.txt",
+    "reference_parts/part-04.txt",
+    "reference_parts/part-05.txt",
+    "reference_payloads/part-01.txt",
+    "reference_payloads/part-02.txt",
+    "reference_payloads/part-03.txt",
+    "reference_payloads/part-04.txt",
+    "reference_payloads/part-05.txt"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "active_execution_v1"
+    }
+  ]
+}

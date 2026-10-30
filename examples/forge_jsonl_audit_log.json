@@ -1,0 +1,17 @@
+{
+  "task_id": "forge-jsonl-audit-log",
+  "objective": "Read SPEC.md and implement the complete durable JSONL append and verification layer around the read-only audit-chain codec. Do not modify either input file.",
+  "allowed_files": [
+    "agent/audit_log.py"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/audit_chain.py"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "jsonl_audit_log_v1"
+    }
+  ]
+}

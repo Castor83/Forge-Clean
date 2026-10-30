@@ -1,0 +1,55 @@
+{
+  "task_id": "text-validator-agent",
+  "objective": "Create agent/validator.py with an is_non_empty_text(value) function that returns True only for strings containing at least one non-whitespace character. Create README.md beginning with '# Text Validator' and briefly document the function.",
+  "allowed_files": [
+    "agent/validator.py",
+    "README.md"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/validator.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/validator.py"
+    },
+    {
+      "kind": "contains_text",
+      "path": "agent/validator.py",
+      "text": "def is_non_empty_text"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/validator.py",
+      "function": "is_non_empty_text",
+      "cases": [
+        {
+          "args": ["hello"],
+          "expected": true
+        },
+        {
+          "args": ["  "],
+          "expected": false
+        },
+        {
+          "args": [""],
+          "expected": false
+        },
+        {
+          "args": [17],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "kind": "file_exists",
+      "path": "README.md"
+    },
+    {
+      "kind": "contains_text",
+      "path": "README.md",
+      "text": "# Text Validator"
+    }
+  ]
+}

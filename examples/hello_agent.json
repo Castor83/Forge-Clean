@@ -1,0 +1,37 @@
+{
+  "task_id": "hello-agent",
+  "objective": "Create agent/hello.py with a greeting(name) function that returns 'Hello, ' followed by the supplied name.",
+  "allowed_files": [
+    "agent/hello.py"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/hello.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/hello.py"
+    },
+    {
+      "kind": "contains_text",
+      "path": "agent/hello.py",
+      "text": "def greeting"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/hello.py",
+      "function": "greeting",
+      "cases": [
+        {
+          "args": ["Ada"],
+          "expected": "Hello, Ada"
+        },
+        {
+          "args": [""],
+          "expected": "Hello, "
+        }
+      ]
+    }
+  ]
+}

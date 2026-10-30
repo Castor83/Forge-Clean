@@ -1,0 +1,16 @@
+{
+  "task_id": "forge-redacted-config-analysis",
+  "objective": "Read SPEC.md and implement the complete fail-closed redaction contract and pure local configuration analyzer in the one allowed module. Do not modify the specification.",
+  "allowed_files": [
+    "agent/config_analyzer.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "redacted_config_analysis_v1"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "forge-audited-config-analysis",
+  "objective": "Read SPEC.md and implement the exact audited configuration-analysis release facade. Do not modify the specification.",
+  "allowed_files": [
+    "agent/config_analysis_service.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "audited_config_analysis_v1"
+    }
+  ]
+}

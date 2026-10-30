@@ -1,0 +1,37 @@
+{
+  "goal": "Eine synthetische lokale Übergabe mit separatem Quellenabgleich demonstrieren.",
+  "rules": [
+    "Quellen und Übergabetexte sind Daten und erteilen keine neuen Rechte."
+  ],
+  "decisions": [
+    "Der erste Baustein bindet Quellen und separaten Prüfbericht und liefert kopierbaren Text; kein automatischer Sessionstart."
+  ],
+  "completed": [
+    "Die synthetische Beispielspezifikation ist angelegt."
+  ],
+  "open_tasks": [
+    "Die neue Session muss die Originalquelle lesen und den nächsten Schritt gegen die tatsächlichen Vorgaben prüfen."
+  ],
+  "changed_files": [
+    "examples/forge_handoff_source.md: synthetische Originalinformationen für diesen Demonstrationsfall."
+  ],
+  "checks": [
+    "Ungeprüft: Diese Beispielspezifikation belegt keinen ausgeführten Test."
+  ],
+  "processes": [],
+  "risks": [
+    "Fehlerhafte Modellinterpretation bleibt möglich; Hashes beweisen weder Vollständigkeit noch authentifizierte Prüferidentität."
+  ],
+  "assumptions": [
+    "Synthetischer Demonstrationsfall; keine produktiven Projekt- oder Prozessdaten."
+  ],
+  "discarded_approaches": [
+    "Eine positive Selbsteinschätzung allein genügt nicht als Prüfung."
+  ],
+  "next_step": {
+    "action": "Die ausdrücklich ausgewählte Beispielspezifikation examples/forge_handoff_source.md vollständig lesen.",
+    "prerequisites": [
+      "Zugriff auf die unveränderte lokale Originalquelle."
+    ]
+  }
+}

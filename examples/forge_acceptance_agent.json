@@ -1,0 +1,47 @@
+{
+  "task_id": "forge-acceptance-agent",
+  "objective": "Create agent/label.py with a format_label(value) function that returns 'Label: ' followed by the supplied value. Create README.md beginning with '# Label Agent' and briefly document the function.",
+  "allowed_files": [
+    "agent/label.py",
+    "README.md"
+  ],
+  "checks": [
+    {
+      "kind": "file_exists",
+      "path": "agent/label.py"
+    },
+    {
+      "kind": "python_syntax",
+      "path": "agent/label.py"
+    },
+    {
+      "kind": "contains_text",
+      "path": "agent/label.py",
+      "text": "def format_label"
+    },
+    {
+      "kind": "python_function_cases",
+      "path": "agent/label.py",
+      "function": "format_label",
+      "cases": [
+        {
+          "args": ["Ada"],
+          "expected": "Label: Ada"
+        },
+        {
+          "args": [17],
+          "expected": "Label: 17"
+        }
+      ]
+    },
+    {
+      "kind": "file_exists",
+      "path": "README.md"
+    },
+    {
+      "kind": "contains_text",
+      "path": "README.md",
+      "text": "# Label Agent"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "forge-audited-decision-gate",
+  "objective": "Read SPEC.md and implement the exact fail-closed policy, durable audit, and socket-action release gate. Do not modify the specification.",
+  "allowed_files": [
+    "agent/decision_gate.py"
+  ],
+  "read_only_files": [
+    "SPEC.md"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "audited_decision_gate_v1"
+    }
+  ]
+}

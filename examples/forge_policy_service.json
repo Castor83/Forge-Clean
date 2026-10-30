@@ -1,0 +1,24 @@
+{
+  "task_id": "forge-policy-service",
+  "objective": "Read SPEC.md and reproduce each exact source fragment into its named allowed file. Preserve all read-only inputs. Do not omit boundary lines. The host checks the complete existing policy and decision service and integrates them with the four read-only Forge modules. Finish only when the required files are complete; tester and reviewer must run_check. Preserve all triple-quoted strings exactly, including their closing three quotes. If tester or reviewer receives passed:false from run_check, finish immediately with passed:false and the host finding; never repeat a failed check or try to repair as a read-only role. The host will start the bounded repair builder.",
+  "allowed_files": [
+    "parts/core_1.txt",
+    "parts/core_2.txt",
+    "parts/core_3.txt",
+    "parts/core_4.txt",
+    "parts/decision_service_1.txt"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/audit.py",
+    "agent/audit_acl.py",
+    "agent/config_analysis_service.py",
+    "agent/config_analyzer.py"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "policy_service_v1"
+    }
+  ]
+}

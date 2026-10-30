@@ -1,0 +1,22 @@
+{
+  "task_id": "forge-capability-registry",
+  "objective": "Read SPEC.md and reproduce its complete exact registry source into agent/capability_registry.py. Preserve every read-only file. Do not omit definitions, imports, validations or registry entries. Finish only when the complete file is written. Tester and reviewer must run_check. On passed:false, read-only roles finish immediately with passed:false and the host finding; never repair or repeat a failed check. The host starts the bounded builder repair.",
+  "allowed_files": [
+    "agent/capability_registry.py"
+  ],
+  "read_only_files": [
+    "SPEC.md",
+    "agent/core.py",
+    "agent/decision_service.py",
+    "agent/audit.py",
+    "agent/audit_acl.py",
+    "agent/config_analysis_service.py",
+    "agent/config_analyzer.py"
+  ],
+  "checks": [
+    {
+      "kind": "host_suite",
+      "suite": "capability_registry_v1"
+    }
+  ]
+}

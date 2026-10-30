@@ -1,0 +1,8 @@
+[project]
+name = "agent1-workspace"
+version = "0.1.0"
+description = "Abgegrenzter lokaler Entwicklungsbereich für Agent 1"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
